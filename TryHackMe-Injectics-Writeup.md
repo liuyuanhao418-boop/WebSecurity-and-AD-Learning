@@ -5,7 +5,7 @@
 nmap -sC -sV -p- target_ip
 
 扫描结果显示：
-f6469110156259814555c939fab75a4b5902eb4fb152c00ceee09fb53fff1eec.png![Uploading image.png…]()
+
 
 
 22/tcp  open  ssh
