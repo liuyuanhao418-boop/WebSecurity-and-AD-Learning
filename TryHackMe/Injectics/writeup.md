@@ -14,7 +14,7 @@ nmap -sC -sV -p- target_ip
 说明目标主机提供 Web 服务。
 
 访问 http://target_ip 后进入首页，并对页面进行初步分析。
-![nmap](image5.png)
+![nmap](image1.png)
 
 
 二、Web 信息枚举
@@ -25,7 +25,7 @@ nmap -sC -sV -p- target_ip
 注释中泄露了一个账户信息
 
 提示存在 mail.log 文件
-
+![nmap](image4.png)
 这些信息可能在后续利用中发挥作用。
 
 2 技术识别
@@ -53,7 +53,9 @@ gobuster dir -u http://target_ip -w /usr/share/seclists/Discovery/Web-Content/co
 /phpmyadmin
 
 分析结果：
-
+![nmap](image2.png)
+![nmap](image3.png)
+![nmap](image5.png)
 文件	作用
 mail.log	可能包含登录信息
 composer.json	暴露网站使用的组件
