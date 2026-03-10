@@ -142,6 +142,7 @@ country 可以接受字符串
 推测 SQL 查询：
 
 UPDATE table SET gold=?, country=?, silver=?, bronze=? WHERE rank=?
+
 六、SQL注入验证
 
 构造测试 payload：
@@ -270,14 +271,14 @@ SSTI
 
 经验总结
 
-1️⃣ 目录扫描非常重要
+目录扫描非常重要
 本次由于未扫描 .log 和 .json 文件，差点错过关键线索。
 
-2️⃣ 每个页面源码都必须检查
+每个页面源码都必须检查
 
 很多提示隐藏在 HTML 注释中。
 
-3️⃣ SQL 注入不应完全依赖 sqlmap
+SQL 注入不应完全依赖 sqlmap
 
 手动测试可以：
 
@@ -287,7 +288,7 @@ SSTI
 
 实现绕过
 
-4️⃣ SSTI 利用需要尝试不同函数
+SSTI 利用需要尝试不同函数
 
 常见函数：
 
