@@ -193,7 +193,7 @@ bronze
 数据被成功修改。
 
 
-![SQL注入成功](images/image2.png)
+![SQL注入成功](images/image12.png)
 
 
 
