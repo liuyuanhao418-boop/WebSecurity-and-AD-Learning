@@ -23,10 +23,8 @@ http://target_ip
 
 进入网站首页。
 
-📷 截图位置
 
-images/homepage.png
-![网站首页](images/homepage.png)
+![网站首页](images/image1.png)
 2.1 页面源代码分析
 
 查看页面源代码后发现：
