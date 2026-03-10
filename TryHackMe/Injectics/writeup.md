@@ -324,15 +324,12 @@ ls
 
 找到 flag 文件。
 
+![SSTI命令执行](images/image20.png)
+
 十三、获取 Flag
 
 执行：
 
 cat flag.txt
 
-成功获取 flag。
-
-📷 截图位置
-
-images/flag.png
-![获取flag](images/flag.png)
+最终获得flag
