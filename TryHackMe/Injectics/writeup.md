@@ -338,10 +338,12 @@ cat flag.txt
 
 本靶机涉及漏洞：
 
-漏洞类型	描述
 SQL Injection	数据库信息泄露
+
 SSTI	模板注入导致命令执行
+
 过滤绕过	JS 与 WAF 关键字绕过
+
 十五、经验总结
 
 通过本次靶机学习得到以下经验：
@@ -363,6 +365,7 @@ SSTI	模板注入导致命令执行
 HTML 注释
 JS 文件
 配置文件
+
 3 目录扫描非常重要
 
 应包含多种文件类型：
@@ -371,6 +374,7 @@ log
 json
 config
 bak
+
 4 SSTI利用需要尝试不同函数
 
 常见函数包括：
@@ -380,6 +384,7 @@ exec
 passthru
 shell_exec
 popen
+
 十六、参考资料
 
 TryHackMe 平台
