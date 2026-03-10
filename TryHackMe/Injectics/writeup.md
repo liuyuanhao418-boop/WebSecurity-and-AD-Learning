@@ -25,6 +25,9 @@ http://target_ip
 
 
 ![网站首页](images/image1.png)
+
+
+
 2.1 页面源代码分析
 
 查看页面源代码后发现：
