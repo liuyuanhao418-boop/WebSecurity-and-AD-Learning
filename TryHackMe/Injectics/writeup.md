@@ -76,12 +76,7 @@ gobuster dir -u http://target_ip -w /usr/share/seclists/Discovery/Web-Content/co
 
 四、识别模板引擎
 
-打开 composer.json 文件。
-
-
-
-
-images/composer_json.png
+打开 composer.json 文件。images/composer_json.png
 ![composer.json](images/image3.png)
 
 
@@ -107,10 +102,10 @@ password
 
 但页面提示输入非法。
 
-📷 截图位置
+![登录错误提示](images/image4.png)
 
-images/login_error.png
-![登录错误提示](images/login_error.png)
+
+
 
 说明：
 
@@ -131,7 +126,12 @@ SELECT
 📷 截图位置
 
 images/js_filter.png
-![JS过滤](images/js_filter.png)
+![JS过滤](images/image5.png)
+![JS过滤](images/image6.png)
+
+
+
+
 
 可以使用 Burp Suite 拦截请求绕过客户端过滤。
 
