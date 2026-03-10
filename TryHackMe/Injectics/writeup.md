@@ -14,6 +14,7 @@ nmap -sC -sV -p- target_ip
 说明目标主机提供 Web 服务。
 
 访问 http://target_ip 后进入首页，并对页面进行初步分析。
+![nmap](image(5).webp)
 
 二、Web 信息枚举
 1 页面源代码分析
