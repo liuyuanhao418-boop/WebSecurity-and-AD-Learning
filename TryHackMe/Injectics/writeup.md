@@ -123,9 +123,7 @@ SELECT
 '
 "
 
-📷 截图位置
 
-images/js_filter.png
 ![JS过滤](images/image5.png)
 ![JS过滤](images/image6.png)
 
