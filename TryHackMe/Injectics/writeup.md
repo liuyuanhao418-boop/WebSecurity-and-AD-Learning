@@ -5,7 +5,7 @@
 nmap -sC -sV -p- target_ip
 
 扫描结果显示：
-![nmap扫描](WebSecurity-and-AD-Learning/images/injescts-img/image.png)
+
 
 
 22/tcp  open  ssh
