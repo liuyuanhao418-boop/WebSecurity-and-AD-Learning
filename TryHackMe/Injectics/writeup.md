@@ -6,10 +6,7 @@ nmap -sC -sV -p- target_ip
 
 扫描结果如下：
 
-📷 截图位置
-
-images/nmap_scan.png
-![nmap扫描结果](images/nmap_scan.png)
+![nmap扫描结果](images/image.png)
 
 扫描发现主要开放端口：
 
