@@ -38,6 +38,10 @@ HTML 注释中泄露了一些提示信息
 
 
 ![源码提示](images/image2.png)
+
+
+
+
 2.2 技术栈识别
 
 使用 Wappalyzer 识别网站技术栈。
