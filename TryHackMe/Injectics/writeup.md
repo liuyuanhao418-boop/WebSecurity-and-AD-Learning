@@ -136,15 +136,19 @@ SELECT
 七、SQL注入利用
 
 使用 Burp Suite 修改请求参数。
+即在burp中修改请求为a' or 1=1;-- -，并发送
+![Burp抓包](images/image8.png)
 
 
-![Burp抓包](images/image7.png)
 
-
-
+发现失败(意料之内，说明存在服务器过滤)
+尝试将载荷进行url编码，发现依旧失败
 测试 payload：
 
 a' || 1=1-- -
+
+
+![Burp抓包](images/image7.png)
 
 成功绕过过滤。
 
