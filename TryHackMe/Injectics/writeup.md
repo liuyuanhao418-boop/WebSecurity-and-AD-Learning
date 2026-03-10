@@ -151,6 +151,17 @@ a' || 1=1-- -
 ![Burp抓包](images/image7.png)
 
 成功绕过过滤。
+方法二：
+也可使用burp的intruder来对email进行注入爆破，关键在于注入的载荷字典(网上查一个sql注入载荷字典即可)
+![Burp抓包](images/image9.png)
+
+
+
+测试结果如下
+![Burp抓包](images/image10.png)
+
+使用破解得到的载荷进行登录，成功(要进行拦截请求，然后在burp中将请求修改在发送到服务器)
+![Burp抓包](images/image11.png)
 
 八、SQL注入点确认
 
