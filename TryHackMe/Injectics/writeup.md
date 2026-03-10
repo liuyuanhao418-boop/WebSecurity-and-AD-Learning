@@ -78,10 +78,13 @@ gobuster dir -u http://target_ip -w /usr/share/seclists/Discovery/Web-Content/co
 
 打开 composer.json 文件。
 
-📷 截图位置
+
+
 
 images/composer_json.png
 ![composer.json](images/image3.png)
+
+
 
 发现网站使用：
 
