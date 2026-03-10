@@ -6,7 +6,7 @@ nmap -sC -sV -p- target_ip
 
 扫描结果显示：
 
-
+![nmap](image.png)
 
 22/tcp  open  ssh
 80/tcp  open  http
