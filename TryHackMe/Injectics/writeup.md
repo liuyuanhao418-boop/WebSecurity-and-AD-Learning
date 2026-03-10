@@ -263,14 +263,15 @@ gold=1,country=(seSELECTlect group_concat(email,':',passwoORrd) from bac_test.us
 
 使用获取的账户登录后台。
 
-📷 截图位置
 
-images/admin_login.png
-![后台登录](images/admin_login.png)
+![后台登录](images/image16.png)
 
 后台存在 Profile 页面。
 
-该页面包含可控输入。
+该页面包含可控输入。主界面的标题可通过first name修改
+
+测试sql注入无果
+
 
 十一、SSTI 漏洞验证
 
@@ -282,17 +283,19 @@ images/admin_login.png
 
 64
 
-📷 截图位置
-
-images/ssti_test.png
-![SSTI测试](images/ssti_test.png)
+![SSTI测试](images/image17.png)
 
 确认存在 SSTI漏洞。
 
 模板引擎为：
 
 Twig
+
 十二、SSTI漏洞利用
+
+常见的针对TWig模板引擎的载荷如下所示
+
+![SSTI测试](images/image18.png)
 
 尝试执行命令：
 
@@ -304,7 +307,7 @@ Twig
 
 system函数被禁用
 
-继续尝试 payload：
+继续尝试 payload：改为使用passthru
 
 {{['id',1]|sort('passthru')|join}}
 
@@ -313,7 +316,7 @@ system函数被禁用
 📷 截图位置
 
 images/ssti_command_execution.png
-![SSTI命令执行](images/ssti_command_execution.png)
+![SSTI命令执行](images/image19.png)
 
 继续执行：
 
