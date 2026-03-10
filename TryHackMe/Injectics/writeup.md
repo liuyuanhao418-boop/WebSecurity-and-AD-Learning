@@ -333,3 +333,57 @@ ls
 cat flag.txt
 
 最终获得flag
+
+十四、漏洞总结
+
+本靶机涉及漏洞：
+
+漏洞类型	描述
+SQL Injection	数据库信息泄露
+SSTI	模板注入导致命令执行
+过滤绕过	JS 与 WAF 关键字绕过
+十五、经验总结
+
+通过本次靶机学习得到以下经验：
+
+1 不要过度依赖自动化工具
+
+手动 SQL 注入能够：
+
+分析过滤机制
+
+构造绕过 payload
+
+理解底层原理
+
+2 页面源码必须仔细查看
+
+很多敏感信息会隐藏在：
+
+HTML 注释
+JS 文件
+配置文件
+3 目录扫描非常重要
+
+应包含多种文件类型：
+
+log
+json
+config
+bak
+4 SSTI利用需要尝试不同函数
+
+常见函数包括：
+
+system
+exec
+passthru
+shell_exec
+popen
+十六、参考资料
+
+TryHackMe 平台
+
+OWASP Top 10
+
+PayloadsAllTheThings
