@@ -137,10 +137,10 @@ SELECT
 
 使用 Burp Suite 修改请求参数。
 
-📷 截图位置
 
-images/burp_intercept.png
-![Burp抓包](images/burp_intercept.png)
+![Burp抓包](images/image7.png)
+
+
 
 测试 payload：
 
