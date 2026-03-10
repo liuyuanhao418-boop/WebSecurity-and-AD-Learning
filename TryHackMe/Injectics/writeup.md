@@ -35,10 +35,9 @@ HTML 注释中泄露了一些提示信息
 
 这些信息可能在后续利用中发挥作用。
 
-📷 截图位置
 
-images/source_code_hint.png
-![源码提示](images/source_code_hint.png)
+
+![源码提示](images/image2.png)
 2.2 技术栈识别
 
 使用 Wappalyzer 识别网站技术栈。
@@ -47,10 +46,7 @@ images/source_code_hint.png
 
 Apache 2.4
 
-📷 截图位置
 
-images/wappalyzer.png
-![技术识别](images/wappalyzer.png)
 
 虽然 Apache 2.4 存在部分公开漏洞，但尝试利用后发现属于 Rabbit Hole。
 
@@ -62,10 +58,6 @@ gobuster dir -u http://target_ip -w /usr/share/seclists/Discovery/Web-Content/co
 
 扫描结果如下：
 
-📷 截图位置
-
-images/gobuster_scan.png
-![目录扫描](images/gobuster_scan.png)
 
 发现关键文件：
 
@@ -82,7 +74,7 @@ images/gobuster_scan.png
 📷 截图位置
 
 images/composer_json.png
-![composer.json](images/composer_json.png)
+![composer.json](images/image3.png)
 
 发现网站使用：
 
