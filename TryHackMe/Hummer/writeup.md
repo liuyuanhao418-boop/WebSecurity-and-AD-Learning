@@ -223,11 +223,11 @@ JWT伪造
 
 系统使用 JWT Token。
 
-![nmap扫描结果](images/image8.png)
+![nmap扫描结果](images/image9.png)
 
 使用token处理网站进行token分析
 
-![nmap扫描结果](images/image9.png)
+![nmap扫描结果](images/image10.png)
 
 
 发现：
@@ -261,7 +261,7 @@ http://10.10.xx.xx:1337/188ade1.txt
 
 成功下载密钥。
 
-![nmap扫描结果](images/image10.png)
+![nmap扫描结果](images/image11.png)
 
 13 JWT权限提升
 
