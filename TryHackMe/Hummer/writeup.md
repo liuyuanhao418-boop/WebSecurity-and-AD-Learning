@@ -20,7 +20,7 @@ nmap -sS -p- 10.10.xx.xx
 
 http://10.10.xx.xx:1337
 
-！[此处插入图片]images/image.png
+![web](images/image.png)
 
 观察登录页面发现：
 
