@@ -34,6 +34,8 @@ http://10.10.xx.xx:1337
 
 3 忘记密码功能分析
 
+![nmap扫描结果](images/image1.png)
+
 系统提供 密码找回功能。
 
 测试发现：
@@ -45,6 +47,8 @@ http://10.10.xx.xx:1337
 因此：
 
 该接口 可能存在用户名枚举漏洞。
+
+可进行爆破,使用burp尝试爆破，发现存在速率限制，无法简单爆破
 
 4 目录扫描
 
@@ -61,8 +65,7 @@ ffuf -w /usr/share/seclists/Discovery/Web-Content/common.txt \
 
 📷 ffuf扫描结果
 
-[此处插入图片]
-images/ffuf_scan.png
+![nmap扫描结果](images/image2.png)
 
 发现目录：
 
@@ -81,10 +84,7 @@ error.logs
 
 tester@hammer.thm
 
-📷 日志泄露
 
-[此处插入图片]
-images/log_leak.png
 6 密码重置功能分析
 
 使用该邮箱进行 密码重置。
