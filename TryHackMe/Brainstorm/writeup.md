@@ -190,6 +190,8 @@ Bad Character: \x00
 
 !mona jmp -r esp -cpb "\x00"
 
+![image](images/image6.png)
+
 得到地址：
 
 625014DF
@@ -248,7 +250,7 @@ nop = b"\x90"*16
 
 payload = buffer + retn + nop + shellcode
 
-📷 Exploit 脚本
+![image](images/image7.png)
 
 5. Privilege Escalation（权限提升）
 
@@ -262,7 +264,6 @@ python3 exploit.py
 
 成功获得 shell。
 
-📷 获取 Shell
 
 6. Capture the Flag（获取 Flag）
 
@@ -270,7 +271,6 @@ python3 exploit.py
 
 type C:\Users\Administrator\Desktop\flag.txt
 
-📷 成功获取 Flag
 
 7. Attack Path Summary（攻击路径总结）
 
@@ -295,3 +295,77 @@ type C:\Users\Administrator\Desktop\flag.txt
 9️ 使用 msfvenom 生成 shellcode
 
 10 构造 exploit 并获得 shell
+
+经验总结
+
+标准缓冲区溢出利用流程
+
+发现程序崩溃
+↓
+确定 EIP 偏移
+↓
+控制 EIP
+↓
+检测坏字符
+↓
+寻找 JMP ESP
+↓
+生成 Shellcode
+↓
+构造 Exploit
+
+Mona 是 Windows BOF 利用中最重要的工具之一，可以快速完成：
+
+坏字符检测
+
+JMP ESP 查找
+
+Pattern 分析
+
+内存模块分析
+
+常用命令：
+
+!mona config
+
+!mona bytearray
+
+!mona compare
+
+!mona jmp
+
+Shellcode 生成注意事项
+
+生成 shellcode 时必须：
+
+排除 坏字符
+
+使用编码器
+
+保证 payload 大小适合缓冲区
+
+示例：
+
+msfvenom -b "\x00"
+
+NOP Sled 的作用
+
+NOP (\x90) 用于：
+
+增加 shellcode 命中概率
+
+防止地址偏移导致 exploit 失败
+
+Windows BOF 利用关键点
+
+成功利用通常需要：
+
+可控 EIP
+
+可执行栈
+
+JMP ESP 指令
+
+无坏字符 shellcode
+
+参考链接教程：https://github.com/gh0x0st/Buffer_Overflow
