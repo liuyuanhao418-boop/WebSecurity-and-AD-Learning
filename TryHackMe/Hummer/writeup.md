@@ -14,15 +14,13 @@ nmap -sS -p- 10.10.xx.xx
 
 说明目标为 Linux Web服务器。
 
-📷 扫描结果
-
-[此处插入图片]
-images/nmap_scan.png
 2 Web 枚举
 
 访问 Web 服务：
 
 http://10.10.xx.xx:1337
+
+！[此处插入图片]images/image.png
 
 观察登录页面发现：
 
