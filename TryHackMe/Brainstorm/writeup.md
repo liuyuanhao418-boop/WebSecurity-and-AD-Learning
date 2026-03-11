@@ -1,10 +1,3 @@
-1. Information Gathering（信息收集）
-
-首先对目标主机进行端口扫描，识别开放端口及服务。
-
-```bash
-nmap -sC -sV <target-ip>
-
 扫描结果：
 
 21/tcp   open  ftp
@@ -254,22 +247,22 @@ type C:\Users\Administrator\Desktop\flag.txt
 
 完整攻击流程：
 
-1️ 使用 Nmap 扫描端口
+1️⃣ 使用 Nmap 扫描端口
 
-2️ 发现 FTP 匿名登录
+2️⃣ 发现 FTP 匿名登录
 
-3️ 下载 chatserver.exe
+3️⃣ 下载 chatserver.exe
 
-4️ 使用 Immunity Debugger 调试程序
+4️⃣ 使用 Immunity Debugger 调试程序
 
-5️ 发现 message 参数存在缓冲区溢出
+5️⃣ 发现 message 参数存在缓冲区溢出
 
-6️ 使用 Metasploit pattern 计算 EIP 偏移
+6️⃣ 使用 Metasploit pattern 计算 EIP 偏移
 
-7️ 使用 Mona 检测坏字符
+7️⃣ 使用 Mona 检测坏字符
 
-8️ 使用 Mona 查找 jmp esp
+8️⃣ 使用 Mona 查找 jmp esp
 
-9️ 使用 msfvenom 生成 shellcode
+9️⃣ 使用 msfvenom 生成 shellcode
 
-10 构造 exploit 并获得 shell
+🔟 构造 exploit 并获得 shell
