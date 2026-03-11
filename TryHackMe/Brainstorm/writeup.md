@@ -1,3 +1,9 @@
+Information Gathering（信息收集）  
+
+首先对目标主机进行端口扫描，识别开放端口及服务。  
+
+bash nmap -sC -sV <target-ip>
+
 扫描结果：
 
 21/tcp   open  ftp
