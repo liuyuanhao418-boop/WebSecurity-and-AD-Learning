@@ -214,17 +214,29 @@ JWT伪造
 
 一个 命令执行界面。
 
+![nmap扫描结果](images/image7.png)
+
+
 11 会话 Token 分析
 
 抓包发现：
 
 系统使用 JWT Token。
 
-并且：
+![nmap扫描结果](images/image8.png)
+
+使用token处理网站进行token分析
+
+![nmap扫描结果](images/image9.png)
+
+
+发现：
 
 token包含 role
 
 使用 HS256
+
+设置了一个 kid，它指向位于 /var/www/mykey.key 的密钥文件
 
 JWT Header：
 
@@ -232,6 +244,7 @@ JWT Header：
  "alg": "HS256",
  "kid": "/var/www/mykey.key"
 }
+
 12 JWT漏洞利用
 
 在命令执行界面执行：
@@ -248,10 +261,8 @@ http://10.10.xx.xx:1337/188ade1.txt
 
 成功下载密钥。
 
-📷 密钥泄露
+![nmap扫描结果](images/image10.png)
 
-[此处插入图片]
-images/key_leak.png
 13 JWT权限提升
 
 修改 JWT：
@@ -282,10 +293,7 @@ cat /home/ubuntu.flag.txt
 
 成功获取 Flag。
 
-📷 获取 Flag
 
-[此处插入图片]
-images/root_flag.png
 攻击路径总结
 
 完整攻击流程：
