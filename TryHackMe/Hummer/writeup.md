@@ -93,10 +93,16 @@ tester@hammer.thm
 
 4位 OTP 验证码
 
+![nmap扫描结果](images/image3.png)
+
 OTP范围：
 
 0000 - 9999
 7 速率限制分析
+
+设置爆破字典
+
+seq 0000 9999 >> codes.txt
 
 使用 Burp Intruder 尝试爆破。
 
@@ -114,6 +120,8 @@ Rate-Limit-Pending
 
 抓包分析发现：
 
+![nmap扫描结果](images/image4.png)
+
 请求头中存在 IP识别机制。
 
 缺少：
@@ -127,6 +135,8 @@ X-Forwarded-For: 127.0.0.1
 发现：
 
 速率限制被重置。
+
+![nmap扫描结果](images/image5.png)
 
 原因：
 
