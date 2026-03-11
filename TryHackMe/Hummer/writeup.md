@@ -184,24 +184,38 @@ ffuf -w numbers.txt \
 
 配置正确的代理/负载均衡器：会正确地重置或验证这个头的值，防止欺骗。
 
-方法二：使用自定义python脚本来进行绕过
+方法二：使用自定义python脚本(otp_bruteforce.py)来进行绕过
 
 脚本爆破流程
 
 发送密码重置请求
+
         ↓
+
 获取 session
+
         ↓
+
 启动 50 个线程
+
         ↓
+
 遍历 OTP 0000-9999
+
         ↓
+
 随机生成 X-Forwarded-For
+
         ↓
+
 绕过 Rate Limit
+
         ↓
+
 找到正确 OTP
+
         ↓
+
 自动重置密码
 
 10 登录系统
