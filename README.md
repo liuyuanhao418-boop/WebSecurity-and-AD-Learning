@@ -52,6 +52,7 @@
 - Impacket
 - Nmap
 - Wireshark
+- ffuf
 
 ---
 
