@@ -14,6 +14,8 @@ cve-2018-2894
 
 /u01/oracle/user_projects/domains/base_domain/servers/AdminServer/tmp/_WL_internal/com.oracle.webservices.wls.ws-testclient-app-wls/4mcj4y/war/css
 
+![示例图片](images/修改目录.png)
+
 使用哥斯拉生成一个shell
 
 ![示例图片](images/生成shell.png)
