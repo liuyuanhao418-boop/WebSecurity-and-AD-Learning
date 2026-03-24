@@ -76,6 +76,11 @@ cve-2018-2894
 
 ![示例图片](images/连接成功1.png)
 
+CVE-2017-10271
+
+访问http://192.168.1.10:7001/wls-wsat/CoordinatorPortType
+
+
 
 
 
