@@ -80,6 +80,30 @@ CVE-2017-10271
 
 访问http://192.168.1.10:7001/wls-wsat/CoordinatorPortType
 
+![示例图片](images/成功访问2.png)
+
+
+使用burpsuit抓包，修改包为下图
+
+![示例图片](images/修改请求2.png)
+
+成功注入的化页面会返回下图
+
+![示例图片](images/注入成功2.png)
+
+nc监听到回传请求
+
+![示例图片](images/接收成功2.png)
+
+或者使用weblogictools来测试目标url
+
+检测到漏洞
+
+![示例图片](images/检测漏洞2.png)
+
+进行利用
+
+![示例图片](images/连接成功2.png)
 
 
 
