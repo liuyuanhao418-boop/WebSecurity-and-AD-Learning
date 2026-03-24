@@ -105,16 +105,45 @@ nc监听到回传请求
 
 ![示例图片](images/连接成功2.png)
 
+cve-2018-2628
 
+使用的是https://github.com/Lighird/CVE-2018-2628的漏洞检测包复现
 
+先使用漏洞检测脚本CVE-2018-2628-MultiThreading.py
 
+将url.txt设置为目标机，端口
 
+![示例图片](images/3设置检测.png)
 
+确认存在漏洞
 
+![示例图片](images/3确认漏洞存在.png)
 
+之后开始进行利用
 
+开启JRMP服务，让weblogic服务器远程调用，使用的是ysoserial-0.1-cve-2018-2628-all.jar工具
 
+但在这之前要先编码反射shell的指令
 
+![示例图片](images/3编码反射指令.png)
 
+之后开启jrmp服务
 
+![示例图片](images/3启动服务.png)
+
+依旧利用此工具，生成连接jrmp服务器的载荷
+
+![示例图片](images/3生成poc载荷.png)
+
+再编辑poc脚本weblogic_poc.py 
+
+![示例图片](images/3修改poc.png)
+
+调用此脚本
+
+![示例图片](images/3修改利用.png)
+
+设置监听并成功收到连接
+
+![示例图片](images/3成功接收连接.png)
 
