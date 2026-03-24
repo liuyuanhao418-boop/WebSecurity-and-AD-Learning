@@ -68,6 +68,8 @@ cve-2018-2894
 
 然后在哥斯拉中配置连接
 
+路径为war名/包中的shell文件名 所以为shell/shell.jsp
+
 ![示例图片](images/配置连接1.png)
 
 连接成功
