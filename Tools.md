@@ -17,3 +17,5 @@ sqlmap
 Metasploit
 
 AWVS
+
+Xray
